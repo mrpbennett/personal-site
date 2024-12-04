@@ -1,8 +1,6 @@
 import { getAllArticles, getArticle } from "@/lib/api";
-
-import Image from "next/image";
 import { notFound } from "next/navigation";
-
+import Image from "next/image";
 import { remark } from "remark";
 import html from "remark-html";
 
@@ -21,6 +19,8 @@ export default async function PostArticlePage({ params }) {
     notFound();
   }
 
+  console.log(article);
+
   const processedContent = await remark().use(html).process(article.content);
   const contentHtml = processedContent.toString();
 
@@ -29,15 +29,15 @@ export default async function PostArticlePage({ params }) {
       <section className="">
         <h2 className="">{article.title}</h2>
 
-        {article.image?.url !== "" ? null : (
+        {article.image ? (
           <Image
             alt="Article Image"
             className="aspect-video w-full overflow-hidden rounded-xl object-cover"
             height="365"
-            src={article.image?.url || null}
+            src={article.image.url}
             width="650"
           />
-        )}
+        ) : null}
 
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </section>
