@@ -8,20 +8,17 @@ export default async function Home() {
     <div className="grid sm:auto-cols-auto sm:grid-flow-col">
       <section className="max-w-[75%]">tags wdwdwdwwwwww</section>
 
-      <section className="border border-gray-200">
+      <section className="">
         {articles.map((article) => (
-          <article
-            key={article.sys.id}
-            className="flex h-full flex-col rounded-lg shadow-lg"
-          >
+          <article key={article.sys.id} className="flex flex-col">
             <div className="flex-1 p-6">
               <Link href={`/articles/${article.slug}`}>
-                <h3 className="py-4 text-2xl font-bold leading-tight text-zinc-900 dark:text-zinc-50">
+                <h4 className="text-lg font-bold leading-tight">
                   {article.title}
-                </h3>
+                </h4>
               </Link>
               <div className="flex items-baseline justify-between">
-                <div className="inline-block rounded-full bg-zinc-100 px-3 py-1 text-sm font-semibold text-zinc-800">
+                <div className="badge badge-primary">
                   {article.categoryName}
                 </div>
                 <div className="flex justify-end">
@@ -29,7 +26,7 @@ export default async function Home() {
                     className="inline-flex h-10 items-center justify-center text-sm font-medium"
                     href={`/articles/${article.slug}`}
                   >
-                    Read More →
+                    Read More
                   </Link>
                 </div>
               </div>

@@ -29,13 +29,15 @@ export default async function PostArticlePage({ params }) {
       <section className="">
         <h2 className="">{article.title}</h2>
 
-        <Image
-          alt="Article Image"
-          className="aspect-video w-full overflow-hidden rounded-xl object-cover"
-          height="365"
-          src={article.image?.url || null}
-          width="650"
-        />
+        {article.image?.url !== "" ? null : (
+          <Image
+            alt="Article Image"
+            className="aspect-video w-full overflow-hidden rounded-xl object-cover"
+            height="365"
+            src={article.image?.url || null}
+            width="650"
+          />
+        )}
 
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </section>
