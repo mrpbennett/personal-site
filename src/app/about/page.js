@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Memoji from "../images/memoji.png";
 
 const social = [
   {
@@ -11,7 +12,7 @@ const social = [
   },
   {
     name: "Email",
-    url: "mailto:paul@pnfb.uk",
+    url: "mailto:pbennett.uk@gmail.com",
   },
 ];
 
@@ -21,10 +22,10 @@ export default function About() {
       <section className="max-w-[75%]">
         <div>
           <div className="hidden items-center sm:block">
-            <Image src="/memoji.png" alt="Memoji" width="200" height="200" />
+            <Image src={Memoji} alt="Memoji" width="200" height="200" />
           </div>
           <div className="items-center sm:hidden">
-            <Image src="/memoji.png" alt="Memoji" width="100" height="100" />
+            <Image src={Memoji} alt="Memoji" width="100" height="100" />
           </div>
         </div>
 
