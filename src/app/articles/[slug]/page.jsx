@@ -1,8 +1,11 @@
 import { getAllArticles, getArticle } from "@/lib/api";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { remark } from "remark";
-import html from "remark-html";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeHighlight from "rehype-highlight";
+import rehypeStringify from "rehype-stringify";
 
 export async function generateStaticParams() {
   const allArticles = await getAllArticles();
@@ -19,9 +22,13 @@ export default async function PostArticlePage({ params }) {
     notFound();
   }
 
-  console.log(article);
+  const processedContent = await unified()
+    .use(remarkParse) // Parse markdown to mdast
+    .use(remarkRehype, { allowDangerousHtml: true }) // Transform to hast
+    .use(rehypeHighlight) // Syntax highlighting
+    .use(rehypeStringify, { allowDangerousHtml: true }) // Transform to html
+    .process(article.content);
 
-  const processedContent = await remark().use(html).process(article.content);
   const contentHtml = processedContent.toString();
 
   return (

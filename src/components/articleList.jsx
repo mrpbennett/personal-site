@@ -5,13 +5,11 @@ import Link from "next/link";
 export default function ArticlesList({ articles }) {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  // Function to split and trim categories
   const splitCategories = (categoryString) => {
     if (!categoryString) return [];
     return categoryString.split(",").map((cat) => cat.trim());
   };
 
-  // Create a map of all categories and their counts
   const categories = articles.reduce((acc, article) => {
     if (article.categoryName) {
       const cats = splitCategories(article.categoryName);
@@ -22,7 +20,6 @@ export default function ArticlesList({ articles }) {
     return acc;
   }, {});
 
-  // Filter articles based on selected category
   const filteredArticles = selectedCategory
     ? articles.filter((article) => {
         const cats = splitCategories(article.categoryName);
@@ -31,33 +28,31 @@ export default function ArticlesList({ articles }) {
     : articles;
 
   return (
-    <div className="grid sm:auto-cols-auto sm:grid-flow-col">
-      <section className="max-w-[75%]">
+    <div className="flex flex-row justify-center gap-20">
+      <section>
         <div
-          className={`mb-2 flex cursor-pointer items-center gap-2 ${
+          className={`mb-2 flex cursor-pointer items-center ${
             selectedCategory === null ? "font-bold" : ""
           }`}
           onClick={() => setSelectedCategory(null)}
         >
           <span>All Posts</span>
-          <span className="text-sm text-gray-500">({articles.length})</span>
         </div>
         {Object.entries(categories).map(([category, count]) => (
           <div
             key={category}
-            className={`flex cursor-pointer items-center gap-2 ${
+            className={`flex cursor-pointer items-center space-y-2${
               selectedCategory === category ? "text-green-500" : ""
             }`}
-            // Modified click handler - just set the category
             onClick={() => setSelectedCategory(category)}
           >
             <span>{category}</span>
-            <span className="text-sm text-gray-500">({count})</span>
+            <span className="ml-2 text-sm text-gray-500">({count})</span>
           </div>
         ))}
       </section>
 
-      <section className="">
+      <section className="prose">
         {filteredArticles.map((article) => (
           <article key={article.sys.id} className="flex flex-col">
             <div className="flex-1 p-6">
@@ -73,14 +68,6 @@ export default function ArticlesList({ articles }) {
                       {cat}
                     </div>
                   ))}
-                </div>
-                <div className="flex justify-end">
-                  <Link
-                    className="inline-flex h-10 items-center justify-center text-sm font-medium"
-                    href={`/articles/${article.slug}`}
-                  >
-                    Read More
-                  </Link>
                 </div>
               </div>
             </div>

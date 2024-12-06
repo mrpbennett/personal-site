@@ -14,6 +14,29 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            "code::before": {
+              content: '""',
+            },
+            "code::after": {
+              content: '""',
+            },
+            pre: {
+              backgroundColor: "var(--tw-prose-pre-bg)",
+              color: "var(--tw-prose-pre-code)",
+              padding: "0",
+            },
+            code: {
+              backgroundColor: "var(--tw-prose-pre-bg)",
+              color: "var(--tw-prose-pre-code)",
+              fontWeight: "400",
+              borderRadius: "0.375rem",
+            },
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],

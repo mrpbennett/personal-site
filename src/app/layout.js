@@ -1,4 +1,6 @@
 import "./globals.css";
+import "highlight.js/styles/base16/espresso.css";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
