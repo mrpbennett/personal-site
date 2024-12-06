@@ -4,7 +4,7 @@ import React from "react";
 const links = [
   {
     id: 1,
-    name: "Home",
+    name: "Articles",
     url: "/",
   },
   {

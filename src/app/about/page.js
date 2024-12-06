@@ -34,11 +34,11 @@ export default function About() {
           <p>mrpbennett</p>
         </div>
 
-        <div className="divider divider-primary"></div>
+        <div className="divider divider-accent"></div>
 
         <div className="space-y-1">
-          <p className="text-sm text-white">Current: Lead Solution Engineer</p>
-          <p className="text-sm text-gray-500">Future: Aspiring CTO</p>
+          <p className="text-xs text-white">Current: Lead Solution Engineer</p>
+          <p className="text-xs text-gray-500">Future: Aspiring CTO</p>
         </div>
 
         <div>
@@ -47,7 +47,7 @@ export default function About() {
               <li key={l.name}>
                 <a
                   href={l.url}
-                  className="badge badge-primary badge-outline no-underline hover:badge-secondary hover:badge-outline"
+                  className="badge badge-accent badge-outline no-underline hover:badge-secondary hover:badge-outline"
                 >
                   {l.name}
                 </a>
