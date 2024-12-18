@@ -1,13 +1,15 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function ArticlesList({ articles }) {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
   const splitCategories = (categoryString) => {
-    if (!categoryString) return [];
+    if (!categoryString) {
+      return [];
+    }
     return categoryString.split(",").map((cat) => cat.trim());
   };
 

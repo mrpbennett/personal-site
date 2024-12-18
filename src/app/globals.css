@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* removes padding from code blocks */
+.prose-lg
+  :where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  padding: 0;
+}
