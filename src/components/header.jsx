@@ -16,14 +16,14 @@ const links = [
 
 export default function Header() {
   return (
-    <div className="navbar pb-10">
+    <div className="navbar flex-col pb-10 sm:flex-row">
       <div className="flex-1">
-        <Link href="/" className="btn btn-ghost">
+        <Link href="/" className="btn btn-ghost font-mono">
           mrpbennett.dev
         </Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal space-x-8 px-1">
+        <ul className="menu menu-horizontal space-x-8 px-1 font-mono">
           {links.map((l) => (
             <Link key={l.id} href={l.url} passHref>
               <span className="btn btn-ghost">{l.name}</span>

@@ -19,35 +19,41 @@ const social = [
 export default function About() {
   return (
     <div className="grid sm:auto-cols-auto sm:grid-flow-col">
-      <section className="max-w-[75%]">
+      <section className="md:max-w-[75%]">
         <div>
           <div className="hidden items-center sm:block">
             <Image src={Memoji} alt="Memoji" width="200" height="200" />
           </div>
-          <div className="items-center sm:hidden">
+          <div className="flex justify-center sm:hidden">
             <Image src={Memoji} alt="Memoji" width="100" height="100" />
           </div>
         </div>
 
         <div className="mt-4">
-          <h2 className="text-2xl font-bold text-white">Paul Bennett</h2>
-          <p>mrpbennett</p>
+          <h2 className="text-center font-mono text-2xl font-bold text-white sm:text-left">
+            Paul Bennett
+          </h2>
+          <p className="text-center font-mono sm:text-left">mrpbennett</p>
         </div>
 
         <div className="divider divider-accent"></div>
 
         <div className="space-y-1">
-          <p className="text-xs text-white">Current: Lead Solution Engineer</p>
-          <p className="text-xs text-gray-500">Future: Aspiring CTO</p>
+          <p className="font-mono text-xs text-white">
+            Current: Lead Solution Engineer
+          </p>
+          <p className="font-mono text-xs text-gray-500">
+            Future: Aspiring CTO
+          </p>
         </div>
 
         <div>
-          <ul className="mt-4 flex items-center space-x-4">
+          <ul className="mb-10 mt-4 flex items-center space-x-4 md:mb-0">
             {social.map((l) => (
               <li key={l.name}>
                 <a
                   href={l.url}
-                  className="badge badge-accent badge-outline no-underline hover:badge-secondary hover:badge-outline"
+                  className="badge badge-accent badge-outline font-mono no-underline hover:badge-secondary hover:badge-outline"
                 >
                   {l.name}
                 </a>
@@ -57,10 +63,10 @@ export default function About() {
         </div>
       </section>
 
-      <section className="prose-md prose">
+      <section className="prose prose-lg">
         <div className="">
           <h1 className="font-bold">Hello 👋</h1>
-          <p className="prose py-6">
+          <p className="prose-md spy-6 prose">
             Aspiring CTO and remote Lead Solutions Engineer passionate about
             building teams, fostering innovation, and creating scalable
             solutions. Obsessed with homelabs, emerging tech, and hands-on
