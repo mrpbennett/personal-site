@@ -5,5 +5,5 @@
 /* removes padding from code blocks */
 .prose-lg
   :where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-  padding: 0;
+  padding: 10px;
 }
