@@ -30,7 +30,7 @@ export default function About() {
         </div>
 
         <div className="mt-4">
-          <h2 className="text-center font-mono text-2xl font-bold text-white sm:text-left">
+          <h2 className="text-center font-mono text-2xl font-bold sm:text-left">
             Paul Bennett
           </h2>
           <p className="text-center font-mono sm:text-left">mrpbennett</p>
@@ -39,9 +39,7 @@ export default function About() {
         <div className="divider divider-accent"></div>
 
         <div className="space-y-1">
-          <p className="font-mono text-xs text-white">
-            Current: Lead Solution Engineer
-          </p>
+          <p className="font-mono text-xs">Current: Lead Solution Engineer</p>
           <p className="font-mono text-xs text-gray-500">
             Future: Aspiring CTO
           </p>
@@ -63,10 +61,10 @@ export default function About() {
         </div>
       </section>
 
-      <section className="prose prose-lg">
+      <section className="prose prose-lg tracking-wide">
         <div className="">
           <h1 className="font-bold">Hello 👋</h1>
-          <p className="prose-md spy-6 prose">
+          <p className="">
             Aspiring CTO and remote Lead Solutions Engineer passionate about
             building teams, fostering innovation, and creating scalable
             solutions. Obsessed with homelabs, emerging tech, and hands-on

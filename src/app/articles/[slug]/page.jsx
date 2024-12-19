@@ -1,11 +1,11 @@
 import { getAllArticles, getArticle } from "@/lib/api";
-import { notFound } from "next/navigation";
 import Image from "next/image";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
+import { notFound } from "next/navigation";
 import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import { unified } from "unified";
 
 export async function generateStaticParams() {
   const allArticles = await getAllArticles();
@@ -32,7 +32,7 @@ export default async function PostArticlePage({ params }) {
   const contentHtml = processedContent.toString();
 
   return (
-    <main className="prose prose-lg mx-auto">
+    <main className="prose prose-lg mx-auto tracking-wide">
       <section className="">
         <h2 className="">{article.title}</h2>
 
