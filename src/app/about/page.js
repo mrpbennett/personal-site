@@ -61,7 +61,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="prose prose-lg tracking-wide">
+      <section className="prose mx-auto tracking-wide sm:prose-lg lg:prose-xl lg:max-w-[75%]">
         <div className="">
           <h1 className="font-bold">Hello 👋</h1>
           <p className="">

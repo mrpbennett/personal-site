@@ -32,7 +32,7 @@ export default async function PostArticlePage({ params }) {
   const contentHtml = processedContent.toString();
 
   return (
-    <main className="prose prose-lg mx-auto tracking-wide">
+    <main className="prose mx-auto tracking-wide sm:prose-lg lg:prose-xl">
       <section className="">
         <h2 className="">{article.title}</h2>
 
