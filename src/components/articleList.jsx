@@ -49,7 +49,7 @@ export default function ArticlesList({ articles }) {
         {Object.entries(categories).map(([category, count]) => (
           <div
             key={category}
-            className={`flex cursor-pointer items-center space-y-2${
+            className={`flex cursor-pointer items-center lowercase space-y-2${
               selectedCategory === category ? "text-green-500" : ""
             }`}
             onClick={() => setSelectedCategory(category)}
